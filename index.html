@@ -1,251 +1,357 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Developer Jon</title>
+
     <!-- Fav Icon -->
-    <link rel="shortcut icon" href="" type="image/x-icon">
+    <link rel="shortcut icon" href="images/favico.png" type="image/x-icon" />
     <!-- Google Fonts Poppins -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
     <!-- Tailwind CDN & Configuration-->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        tailwind.config = {
-          theme: {
-            extend: {
-              colors: {
-                clifford: '#da373d',
-              }
-            }
-          }
-        }
-      </script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: "#da373d",
+            },
+            height: {
+              sSlider: "32rem",
+            },
+          },
+        },
+      };
+    </script>
 
-        <!-- This style only create for only fonts add  -->
-      <style>
-        body{
-            font-family: 'Poppins', sans-serif;
-        }
-     
-      </style>
-
-</head>
-<body>
-
-  
-        <!-- ====== Navbar Section Start -->
-        <header
-        x-data="
+    <!-- This style only create for only fonts add  -->
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ====== Navbar Section Start -->
+    <header
+      x-data="
           {
             navbarOpen: false
           }
         "
-        class="bg-white w-full flex items-center mx-auto"
-      >
-        <div class="container">
-          <div class="flex  items-center justify-between relative">
-            <div class="px-4 w-60 max-w-full">
-              <a href="" class="w-full font-bold text-3xl block py-5">
-                Dev Jon
-              </a>
+      class="bg-white w-full flex items-center mx-auto"
+    >
+      <div class="container">
+        <div class="flex items-center justify-between relative">
+          <div class="px-4 w-60 max-w-full">
+            <a href="" class="w-full font-bold text-3xl block py-5">
+              Dev Jon
+            </a>
+          </div>
+          <div class="flex px-4 justify-between items-center w-full">
+            <div>
+              <button
+                @click="navbarOpen = !navbarOpen"
+                :class="navbarOpen && 'navbarTogglerActive' "
+                id="navbarToggler"
+                class="block absolute right-4 top-1/2 -translate-y-1/2 lg:hidden focus:ring-2 ring-primary px-3 py-[6px] rounded-lg"
+              >
+                <span
+                  class="relative w-[30px] h-[2px] my-[6px] block bg-black"
+                ></span>
+                <span
+                  class="relative w-[30px] h-[2px] my-[6px] block bg-black"
+                ></span>
+                <span
+                  class="relative w-[30px] h-[2px] my-[6px] block bg-black"
+                ></span>
+              </button>
+              <nav
+                :class="!navbarOpen && 'hidden' "
+                id="navbarCollapse"
+                class="absolute py-5 px-6 bg-white shadow rounded-lg max-w-[250px] w-full lg:max-w-full lg:w-full right-4 top-full lg:block lg:static lg:shadow-none"
+              >
+                <ul class="blcok lg:flex">
+                  <li>
+                    <a
+                      href="javascript:void(0)"
+                      class="text-base font-medium text-dark hover:text-primary py-2 lg:inline-flex flex lg:ml-12"
+                    >
+                      Home
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="javascript:void(0)"
+                      class="text-base font-medium text-dark hover:text-primary py-2 lg:inline-flex flex lg:ml-12"
+                    >
+                      Courses
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="javascript:void(0)"
+                      class="text-base font-medium text-dark hover:text-primary py-2 lg:inline-flex flex lg:ml-12"
+                    >
+                      Deals
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="javascript:void(0)"
+                      class="text-base font-medium text-dark hover:text-primary py-2 lg:inline-flex flex lg:ml-12"
+                    >
+                      Success
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="javascript:void(0)"
+                      class="text-base font-medium text-dark hover:text-primary py-2 lg:inline-flex flex lg:ml-12"
+                    >
+                      About
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="javascript:void(0)"
+                      class="text-base font-medium text-dark hover:text-primary py-2 lg:inline-flex flex lg:ml-12"
+                    >
+                      Register
+                    </a>
+                  </li>
+                </ul>
+              </nav>
             </div>
-            <div class="flex px-4 justify-between items-center w-full">
-              <div>
-                <button
-                  @click="navbarOpen = !navbarOpen"
-                  :class="navbarOpen && 'navbarTogglerActive' "
-                  id="navbarToggler"
-                  class="
-                    block
-                    absolute
-                    right-4
-                    top-1/2
-                    -translate-y-1/2
-                    lg:hidden
-                    focus:ring-2
-                    ring-primary
-                    px-3
-                    py-[6px]
-                    rounded-lg
-                   
-                   
-                  "
-                >
-                  <span
-                    class="relative w-[30px] h-[2px] my-[6px] block bg-black"
-                  ></span>
-                  <span
-                    class="relative w-[30px] h-[2px] my-[6px] block bg-black"
-                  ></span>
-                  <span
-                    class="relative w-[30px] h-[2px] my-[6px] block bg-black"
-                  ></span>
-                </button>
-                <nav
-                  :class="!navbarOpen && 'hidden' "
-                  id="navbarCollapse"
-                  class="
-                    absolute
-                    py-5
-                    px-6
-                    bg-white
-                    shadow
-                    rounded-lg
-                    max-w-[250px]
-                    w-full
-                    lg:max-w-full lg:w-full
-                    right-4
-                    top-full
-                    lg:block lg:static lg:shadow-none
-                  "
-                >
-                  <ul class="blcok lg:flex">
-                    <li>
-                      <a
-                        href="javascript:void(0)"
-                        class="
-                          text-base
-                          font-medium
-                          text-dark
-                          hover:text-primary
-                          py-2
-                          lg:inline-flex
-                          flex
-                          lg:ml-12
-                        "
-                      >
-                        Home
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="javascript:void(0)"
-                        class="
-                          text-base
-                          font-medium
-                          text-dark
-                          hover:text-primary
-                          py-2
-                          lg:inline-flex
-                          flex
-                          lg:ml-12
-                        "
-                      >
-                        Courses
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="javascript:void(0)"
-                        class="
-                          text-base
-                          font-medium
-                          text-dark
-                          hover:text-primary
-                          py-2
-                          lg:inline-flex
-                          flex
-                          lg:ml-12
-                        "
-                      >
-                        Deals
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="javascript:void(0)"
-                        class="
-                          text-base
-                          font-medium
-                          text-dark
-                          hover:text-primary
-                          py-2
-                          lg:inline-flex
-                          flex
-                          lg:ml-12
-                        "
-                      >
-                        Success
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="javascript:void(0)"
-                        class="
-                          text-base
-                          font-medium
-                          text-dark
-                          hover:text-primary
-                          py-2
-                          lg:inline-flex
-                          flex
-                          lg:ml-12
-                        "
-                      >
-                        About
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="javascript:void(0)"
-                        class="
-                          text-base
-                          font-medium
-                          text-dark
-                          hover:text-primary
-                          py-2
-                          lg:inline-flex
-                          flex
-                          lg:ml-12
-                        "
-                      >
-                        Register
-                      </a>
-                    </li>
-                  </ul>
-                </nav>
-              </div>
-              <div class="sm:flex justify-end hidden pr-16 lg:pr-0">
-                <a
-                  href="javascript:void(0)"
-                  class="
-                    text-base
-                    font-bold
-                   
-                    text-blue-700
-                    hover:text-primary
-                    py-3
-                    px-7
-                    border border-blue-600
-                    rounded-xl
-                  "
-                >
-                  Register
-                </a>
-             
-              </div>
+            <div class="sm:flex justify-end hidden pr-16 lg:pr-0">
+              <a
+                href="javascript:void(0)"
+                class="text-base font-bold text-blue-700 hover:text-primary py-3 px-7 border border-blue-600 rounded-xl"
+              >
+                Register
+              </a>
             </div>
           </div>
         </div>
-    
-      <!-- ====== Navbar Section End -->
+      </div>
 
+      <!-- ====== Navbar Section End -->
     </header>
 
-
+    <!-- Carousel Section Start -->
    
- 
+    <section id="Slider" class="mx-10 mb-20">
+    <div id="default-carousel" class="relative" data-carousel="static">
+      <!-- Carousel wrapper -->
+      <div class="overflow-hidden relative h-56 rounded-lg md:h-sSlider">
+        <!-- Item 1 -->
+        <div
+          class="duration-700 ease-in-out absolute inset-0 transition-all transform translate-x-0 z-20"
+          data-carousel-item=""
+        >
+          <span
+            class="absolute z-20 top-1/2 left-1/2  font-semibold text-white -translate-x-1/2 -translate-y-1/2 dark:text-gray-800 z-52"
+          >
+            <h1 class="text-white text-5xl text-center font-bold">
+              Get Started Digital Learning
+            </h1>
+            <p class="text-slate-200 text-md text-center py-5">
+              It is a long established fact that a reader will be distracted by
+              the readable content of a page when looking at its layout.
+            </p>
+            <center>  <button class="px-7 py-3 bg-blue-400 text-base text-white rounded">
+              Get Started
+            </button></center>
+          
+          </span>
+          <img
+            src="images/cover/cover-1.png"
+            class="block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full brightness-50"
+            alt="..."
+          />
+
+        </div>
+        <!-- Item 2 -->
+        <div
+          class="duration-700 ease-in-out absolute inset-0 transition-all transform translate-x-full z-10"
+          data-carousel-item=""
+        >
+        <span
+        class="absolute z-20 top-1/2 left-1/2  font-semibold text-white -translate-x-1/2 -translate-y-1/2 dark:text-gray-800 z-52"
+      >
+        <h1 class="text-white text-5xl text-center font-bold">
+          Get Started Digital Learning
+        </h1>
+        <p class="text-slate-200 text-md text-center py-5">
+          It is a long established fact that a reader will be distracted by
+          the readable content of a page when looking at its layout.
+        </p>
+        <center>  <button class="px-7 py-3 bg-blue-400 text-base text-white rounded">
+          Get Started
+        </button></center>
+      
+      </span>
+          <img
+            src="images/cover/cover-2.jpg"
+            class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2 brightness-50"
+            alt="..."
+          />
+        </div>
+        <!-- Item 3 -->
+        <div
+          class="duration-700 ease-in-out absolute inset-0 transition-all transform -translate-x-full z-10"
+          data-carousel-item=""
+        >
+        <span
+        class="absolute z-20 top-1/2 left-1/2  font-semibold text-white -translate-x-1/2 -translate-y-1/2 dark:text-gray-800 z-52"
+      >
+        <h1 class="text-white text-5xl text-center font-bold">
+          Get Started Digital Learning
+        </h1>
+        <p class="text-slate-200 text-md text-center py-5">
+          It is a long established fact that a reader will be distracted by
+          the readable content of a page when looking at its layout.
+        </p>
+        <center>  <button class="px-7 py-3 bg-blue-400 text-base text-white rounded">
+          Get Started
+        </button></center>
+      
+      </span>
+          <img
+            src="images/cover/cover-3.jpg"
+            class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2 brightness-50"
+            alt="..."
+          />
+        </div>
+      </div>
+      <!-- Slider indicators -->
+      <div
+        class="flex absolute bottom-5 left-1/2 z-30 space-x-3 -translate-x-1/2"
+      >
+        <button
+          type="button"
+          class="w-3 h-3 rounded-full bg-white dark:bg-gray-800"
+          aria-current="true"
+          aria-label="Slide 1"
+          data-carousel-slide-to="0"
+        ></button>
+        <button
+          type="button"
+          class="w-3 h-3 rounded-full bg-white/50 dark:bg-gray-800/50 hover:bg-white dark:hover:bg-gray-800"
+          aria-current="false"
+          aria-label="Slide 2"
+          data-carousel-slide-to="1"
+        ></button>
+        <button
+          type="button"
+          class="w-3 h-3 rounded-full bg-white/50 dark:bg-gray-800/50 hover:bg-white dark:hover:bg-gray-800"
+          aria-current="false"
+          aria-label="Slide 3"
+          data-carousel-slide-to="2"
+        ></button>
+      </div>
+      <!-- Slider controls -->
+      <button
+        type="button"
+        class="flex absolute top-0 left-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none"
+        data-carousel-prev=""
+      >
+        <span
+          class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+        >
+          <svg
+            aria-hidden="true"
+            class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M15 19l-7-7 7-7"
+            ></path>
+          </svg>
+          <span class="sr-only">Previous</span>
+        </span>
+      </button>
+      <button
+        type="button"
+        class="flex absolute top-0 right-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none"
+        data-carousel-next=""
+      >
+        <span
+          class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+        >
+          <svg
+            aria-hidden="true"
+            class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 5l7 7-7 7"
+            ></path>
+          </svg>
+          <span class="sr-only">Next</span>
+        </span>
+      </button>
+    </div>
+  </section>
+    <!-- Carousel Section End -->
+
+<main class="mx-10">
+
+  <section id="Course">
+
+
+<h1 class="text-center text-5xl font-bold">Discover Our Popular <br> Courses</h1>
+  <p class="text-base text-center text-slate-500 py-11">It is a long established fact that a reader will be distracted by the readable <br> content of a page when looking at its layout.</p>
+
+  <div>
+     <div class="card">
+      <div>
+        <img src="images/course/course-1.png" alt="">
+      </div>
+
+      <div>
+        <h1 class="text-2xl">Fundamental Of UI/UX Design</h1>
+        <p class="text-sm text-slate-500">Some quick example text to build on the card title and make up the bulk of the card.</p>
+        <h5>Price : 20$</h5>
+      </div>
+     </div>
+  </div>
+
+
+
+  </section>
+  
+
+
+
+
+</main>
 
 
 
 
 
-     
-
-
-</body>
+    <!-- Tailwind Component Flowbite -->
+    <script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>
+  </body>
 </html>
