@@ -23,6 +23,8 @@
           extend: {
             colors: {
               clifford: "#da373d",
+              myChose:'#777777',
+            
             },
             height: {
               sSlider: "32rem",
@@ -41,7 +43,9 @@
     </style>
   </head>
   <body>
-    <!-- ====== Navbar Section Start -->
+  
+      <!-- Header Start -->
+
     <header
       x-data="
           {
@@ -50,6 +54,11 @@
         "
       class="bg-white w-full flex items-center mx-auto"
     >
+
+
+      <!-- ====== Navbar Section Start -->
+
+
       <div class="container">
         <div class="flex items-center justify-between relative">
           <div class="px-4 w-60 max-w-full">
@@ -144,8 +153,11 @@
         </div>
       </div>
 
-      <!-- ====== Navbar Section End -->
+ <!-- ====== Navbar Section End -->
+     
     </header>
+
+
 
     <!-- Carousel Section Start -->
 
@@ -164,7 +176,7 @@
               <h1 class="text-white text-xl sm:text-5xl text-center font-bold">
                 Get Started Digital Learning
               </h1>
-              <p class="text-slate-200 text-xs sm:text-md text-center py-5">
+              <p class="text-slate-50 opacity-75 text-xs sm:text-md text-center py-5">
                 It is a long established fact that a reader will be distracted
                 by the readable content of a page when looking at its layout.
               </p>
@@ -193,7 +205,7 @@
             <h1 class="text-white text-xl sm:text-5xl text-center font-bold">
               Get Started Digital Learning
             </h1>
-            <p class="text-slate-200 text-xs sm:text-md text-center py-5">
+            <p class="text-slate-50 opacity-75  text-xs sm:text-md text-center py-5">
               It is a long established fact that a reader will be distracted
               by the readable content of a page when looking at its layout.
             </p>
@@ -222,7 +234,7 @@
             <h1 class="text-white text-xl sm:text-5xl text-center font-bold">
               Get Started Digital Learning
             </h1>
-            <p class="text-slate-200 text-xs sm:text-md text-center py-5">
+            <p class="text-slate-50 opacity-75 text-xs sm:text-md text-center py-5">
               It is a long established fact that a reader will be distracted
               by the readable content of a page when looking at its layout.
             </p>
@@ -322,9 +334,15 @@
         </button>
       </div>
     </section>
+
     <!-- Carousel Section End -->
 
     <main class="mx-10">
+
+      <!-- Course Section Start -->
+     
+
+
       <section id="Course">
         <h1 class="text-center text-5xl font-bold">
           Discover Our Popular <br />
@@ -479,7 +497,57 @@
           </button>
         </center>
       </section>
-    </main>
+
+ <!-- Course Section End -->
+
+
+ <!-- Working Section Start -->
+
+<section id="working" class="mt-20 bg-slate-50">
+  <div class="grid sm:grid-cols-2 gap-10">
+    <div class=""><img class="" src="images/working.png" alt=""></div>
+    <div class="flex flex-col justify-center">
+      <h1 class="lg:text-5xl md:text-2xl text- font-bold">Explore The elearning Institute</h1>
+      <p class="text-sm leading-6 my-4 opacity-75 ">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which.... <span class="sm:hidden lg:block">don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure.
+<br><br>
+        Anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined.</span> </p>
+        <div class="mt-5 flex  gap-16">
+          <div>
+            <h1 class="text-3xl font-bold">3.2K+</h1>
+             <p class="text-sm opacity-75">Online Course</p>
+            </div>
+          <div><h1 class="text-3xl font-bold">600+</h1>
+             <p class="text-sm opacity-75">Expert Member</p>
+            </div>
+          <div><h1 class="text-3xl font-bold">1k+</h1>
+             <p class="text-sm opacity-75">Rating & Review</p>
+            </div>
+          
+        </div>
+        <div>
+          <button
+            class="px-4 py-2 bg-blue-400 text-sm text-white rounded mt-12"
+          >
+           Read More
+          </button>
+          </div>
+    </div>
+  </div>
+
+
+</section>
+ 
+ <!-- Working Section End -->
+
+<!-- Module Div Section Start -->
+<section>
+
+</section>
+<!-- Module Div Section end -->
+
+
+
+</main>
 
     <!-- Tailwind Component Flowbite -->
     <script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>
